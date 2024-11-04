@@ -1,4 +1,4 @@
-import { StrictMode } from "react";
+
 import { createRoot } from "react-dom/client";
 import {
   Link,
@@ -47,7 +47,5 @@ const router = createHashRouter([
 
 // biome-ignore lint/style/noNonNullAssertion: root html element is there
 createRoot(document.getElementById("root")!).render(
-  <StrictMode>
     <RouterProvider router={router} />
-  </StrictMode>
 );
