@@ -27,9 +27,7 @@ const Tabata = () => {
   };
   const decrementWork = () => {
     setWork((workTime: number) => {
-        console.log("decrementing work");
       if (workTime > 0) {
-        console.log("decrementing work again");
         return workTime - 1;
       } else {        
         clearInterval(workInterval.intervalId);
