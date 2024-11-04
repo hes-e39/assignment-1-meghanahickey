@@ -6,11 +6,16 @@ const StyledButtons = styled.div`
   padding: 10px;
 `;
 
-const Buttons = ({ inputButtons }: { inputButtons: string[] }) => {
-  const displayButtons = inputButtons.map((buttonName) => {
-    return <button>{buttonName}</button>;
+type buttonInfo = {
+  name: string;
+  clickCallback: () => void;
+}
+
+const Buttons = ({inputButtons}: {inputButtons: buttonInfo[]}) => {
+  const displayButtons = inputButtons.map(({name, clickCallback}) => {
+    return <button key={name} onClick={clickCallback}>{name}</button>;
   });
   return <StyledButtons>{displayButtons}</StyledButtons>;
 };
 
-export default Buttons;
+export {Buttons, type buttonInfo};
